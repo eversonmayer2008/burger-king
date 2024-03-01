@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger King</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #FFA500;
+            padding: 20px;
+            color: #FFF;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        .menu-item {
+            border-bottom: 1px solid #CCC;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #FFA500;
+            padding: 10px;
+            color: #FFF;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Burger King</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Localizações</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2 style="color:red">Ofertas Especiais</h2>
+            <div class="offer">
+                <h3 style="color:red">Combo Whopper</h3>
+                <img src="https://static.ifood-static.com.br/image/upload/t_high/pratos/6e73dce2-a17f-4aef-9035-1409cea198fe/202210041444_5868_i.jpg">
+                <p style="color:orange">Aproveite o delicioso Whopper acompanhado de batatas fritas e refrigerante por apenas R$ 19,90.</p>
+            </div>
+            <div class="offer">
+                <h3 style="color:red">Chicken Royale</h3>
+                <img src="https://www.hungryjacks.com.au/Upload/HJ/Media/UNO/HJ16B0-1.PNG">
+                <p style="color:orange">Experimente o saboroso Chicken Royale por apenas R$ 15,90. Não perca!</p>
+            </div>
+            <div class="offer">
+                <h3>Double Cheeseburger</h3>
+                <img src="https://uploads.metropoles.com/wp-content/uploads/2019/11/29165601/bobs.jpg">
+                <p>Leve dois Double Cheeseburgers por apenas R$ 12,90. Imperdível!</p>
+            </div>
+        </section>
+        <section>
+            <h2>Menu</h2>
+            <div class="menu-item">
+                <h3>Whopper</h3>
+                <p>Hambúrguer de carne grelhada, queijo, alface, tomate, cebola e maionese.</p>
+                <p>Preço: R$ 15,00</p>
+            </div>
+            <div class="menu-item">
+                <h3>Big King</h3>
+                <p>Dois hambúrgueres de carne, queijo, alface, cebola, picles e molho Big King.</p>
+                <p>Preço: R$ 17,00</p>
+            </div>
+            <div class="menu-item">
+                <h3>Chicken Sandwich</h3>
+                <p>Filé de frango grelhado, alface, tomate e maionese.</p>
+                <p>Preço: R$ 12,00</p>
+            </div>
+        </section>
+        <section>
+            <h2>Localizações</h2>
+            <div id="map"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Burger King. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function initMap() {
+            // Coordenadas fictícias para a localização do Burger King
+            var burgerKingLocation = {lat: -23.5505, lng: -46.6333};
+            
+            // Cria um mapa com o marcador na localização do Burger King
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: burgerKingLocation,
+                zoom: 15
+            });
+
+            var marker = new google.maps.Marker({
+                position: burgerKingLocation,
+                map: map,
+                title: 'Burger King'
+            });
+        }
+    </script>
+
+    <!-- Adicione a chave da API do Google Maps abaixo -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=SuaChaveAqui&callback=initMap" async defer></script>
+</body>
+</html>
+
 
