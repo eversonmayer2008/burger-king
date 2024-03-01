@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<body>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burger King</title>
@@ -17,6 +16,14 @@
             padding: 20px;
             color: #FFF;
             text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            max-width: 150px;
+            margin-right: 20px; /* Adicionando margem à direita para a logo */
         }
 
         nav ul {
@@ -67,7 +74,9 @@
 </head>
 <body>
     <header>
-        <h1>Burger King</h1>
+        <div class="logo">
+            <img src="https://i.pinimg.com/originals/88/0d/4f/880d4f0de6c0af5b28d41ca6db2fc4ef.png" alt="Burger King Logo">
+        </div>
         <nav>
             <ul>
                 <li><a href="#">Menu</a></li>
@@ -91,31 +100,33 @@
                 <p style="color:orange">Experimente o saboroso Chicken Royale por apenas R$ 15,90. Não perca!</p>
             </div>
             <div class="offer">
-                <h3>Double Cheeseburger</h3>
+                <h3 style="color:red">Double Cheeseburger</h3>
                 <img src="https://uploads.metropoles.com/wp-content/uploads/2019/11/29165601/bobs.jpg">
-                <p>Leve dois Double Cheeseburgers por apenas R$ 12,90. Imperdível!</p>
+                <p style="color:orange">Leve dois Double Cheeseburgers por apenas R$ 12,90. Imperdível!</p>
             </div>
         </section>
+        
         <section>
-            <h2>Menu</h2>
+            <h2 style="color:darkblue">Menu</h2>
             <div class="menu-item">
-                <h3>Whopper</h3>
-                <p>Hambúrguer de carne grelhada, queijo, alface, tomate, cebola e maionese.</p>
-                <p>Preço: R$ 15,00</p>
+                <h3 style="color:red">Whopper</h3>
+                <p style="color:orange">Hambúrguer de carne grelhada, queijo, alface, tomate, cebola e maionese.</p>
+                <p style="color:darkblue">Preço: R$ 15,00</p>
             </div>
             <div class="menu-item">
-                <h3>Big King</h3>
-                <p>Dois hambúrgueres de carne, queijo, alface, cebola, picles e molho Big King.</p>
-                <p>Preço: R$ 17,00</p>
+                <h3 style="color:red">Big King</h3>
+                <p style="color:orange">Dois hambúrgueres de carne, queijo, alface, cebola, picles e molho Big King.</p>
+                <p style="color:darkblue">Preço: R$ 17,00</p>
             </div>
             <div class="menu-item">
-                <h3>Chicken Sandwich</h3>
-                <p>Filé de frango grelhado, alface, tomate e maionese.</p>
-                <p>Preço: R$ 12,00</p>
+                <h3 style="color:red">Chicken Sandwich</h3>
+                <p style="color:orange">Filé de frango grelhado, alface, tomate e maionese.</p>
+                <p style="color:darkblue">Preço: R$ 12,00</p>
             </div>
         </section>
+        
         <section>
-            <h2>Localizações</h2>
+            <h2 style="color:red">Localizações</h2>
             <div id="map"></div>
         </section>
     </main>
@@ -125,19 +136,22 @@
 
     <script>
         function initMap() {
-            // Coordenadas fictícias para a localização do Burger King
-            var burgerKingLocation = {lat: -23.5505, lng: -46.6333};
-            
-            // Cria um mapa com o marcador na localização do Burger King
+            // Coordenadas fictícias para as localizações do Burger King
+            var locations = [
+                {lat: -23.5505, lng: -46.6333}, // Exemplo de coordenadas para São Paulo
+                // Adicione mais coordenadas para outras localizações do Burger King
+            ];
+
             var map = new google.maps.Map(document.getElementById('map'), {
-                center: burgerKingLocation,
-                zoom: 15
+                zoom: 10,
+                center: locations[0] // Centralizar o mapa na primeira localização
             });
 
-            var marker = new google.maps.Marker({
-                position: burgerKingLocation,
-                map: map,
-                title: 'Burger King'
+            locations.forEach(function(location) {
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
             });
         }
     </script>
