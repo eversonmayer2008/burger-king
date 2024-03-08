@@ -122,43 +122,15 @@
                 <h3 style="color:red">Chicken Sandwich</h3>
                 <p style="color:orange">Filé de frango grelhado, alface, tomate e maionese.</p>
                 <p style="color:darkblue">Preço: R$ 12,00</p>
+                <h1 style="color:red">localização</h1>
+                <img src="https://pyxis.nymag.com/v1/imgs/7b4/023/f1cf27d870af3926fb48683b273711ad04-17-google-maps-fast-food.rsocial.w900.jpg">
             </div>
-        </section>
-        
-        <section>
-            <h2 style="color:red">Localizações</h2>
-            <div id="map"></div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Burger King. Todos os direitos reservados.</p>
+    <p>&copy; 2024 Burger King. Todos os direitos reservados.</p>
+        
     </footer>
-
-    <script>
-        function initMap() {
-            // Coordenadas fictícias para as localizações do Burger King
-            var locations = [
-                {lat: -23.5505, lng: -46.6333}, // Exemplo de coordenadas para São Paulo
-                // Adicione mais coordenadas para outras localizações do Burger King
-            ];
-
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
-                center: locations[0] // Centralizar o mapa na primeira localização
-            });
-
-            locations.forEach(function(location) {
-                var marker = new google.maps.Marker({
-                    position: location,
-                    map: map
-                });
-            });
-        }
-    </script>
-
-    <!-- Adicione a chave da API do Google Maps abaixo -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=SuaChaveAqui&callback=initMap" async defer></script>
 </body>
 </html>
-
 
